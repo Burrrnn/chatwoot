@@ -1,6 +1,6 @@
-# This file contains all the installation wide configuration which controls various settings in Agentflows
+# This file contains all the installation wide configuration which controls various settings in Chatwoot
 # This is internal config and should not be modified by the user directly in database
-# Agentflows might override and modify these values during the upgrade process
+# Chatwoot might override and modify these values during the upgrade process
 # Configs which can be modified by the user are available in the dashboard under appropriate UI
 #
 # name: the name of the config referenced in the code
@@ -82,7 +82,7 @@
 - name: WEBHOOK_TIMEOUT
   value: 5
   display_title: 'Webhook request timeout (seconds)'
-  description: 'Maximum time Agentflows waits for a webhook response before failing the request'
+  description: 'Maximum time Chatwoot waits for a webhook response before failing the request'
   locked: false
 - name: DIRECT_UPLOADS_ENABLED
   type: boolean
@@ -236,17 +236,17 @@
   type: secret
 # ------- End of Context.dev Config ------- #
 
-# ------- Agentflows Internal Config for Cloud ----#
+# ------- Chatwoot Internal Config for Cloud ----#
 - name: CHATWOOT_INBOX_TOKEN
   value:
   display_title: 'Inbox Token'
-  description: 'The Agentflows Inbox Token for Contact Support in Cloud'
+  description: 'The Chatwoot Inbox Token for Contact Support in Cloud'
   locked: false
   type: secret
 - name: CHATWOOT_INBOX_HMAC_KEY
   value:
   display_title: 'Inbox HMAC Key'
-  description: 'The Agentflows Inbox HMAC Key for Contact Support in Cloud'
+  description: 'The Chatwoot Inbox HMAC Key for Contact Support in Cloud'
   locked: false
   type: secret
 - name: CHATWOOT_CLOUD_PLANS
@@ -259,11 +259,11 @@
   description: 'Config to features and their associated plans'
 - name: DEPLOYMENT_ENV
   value: self-hosted
-  description: 'The deployment environment of the installation, to differentiate between Agentflows cloud and self-hosted'
+  description: 'The deployment environment of the installation, to differentiate between Chatwoot cloud and self-hosted'
 - name: CLOUD_ANALYTICS_TOKEN
   value:
   display_title: 'Analytics Token'
-  description: 'The Amplitude analytics API key for Agentflows cloud'
+  description: 'The Amplitude analytics API key for Chatwoot cloud'
   type: secret
 - name: CLEARBIT_API_KEY
   value:
@@ -289,9 +289,9 @@
   display_title: 'Inactive WhatsApp Numbers'
   description: 'Comma-separated list of WhatsApp numbers that should be rejected with a 422 error'
   type: code
-# ------- End of Agentflows Internal Config for Cloud ----#
+# ------- End of Chatwoot Internal Config for Cloud ----#
 
-# ------- Agentflows Internal Config for Self Hosted ----#
+# ------- Chatwoot Internal Config for Self Hosted ----#
 - name: INSTALLATION_PRICING_PLAN
   value: 'community'
   description: 'The pricing plan for the installation, retrieved from the billing API'
@@ -300,20 +300,20 @@
   description: 'The number of licenses purchased for the installation, retrieved from the billing API'
 - name: CHATWOOT_SUPPORT_WEBSITE_TOKEN
   value:
-  description: 'The Agentflows website token, used to identify the Agentflows inbox and display the "Contact Support" option on the billing page'
+  description: 'The Chatwoot website token, used to identify the Chatwoot inbox and display the "Contact Support" option on the billing page'
   type: secret
 - name: CHATWOOT_SUPPORT_SCRIPT_URL
   value:
-  description: 'The Agentflows script base URL, to display the "Contact Support" option on the billing page'
+  description: 'The Chatwoot script base URL, to display the "Contact Support" option on the billing page'
 - name: CHATWOOT_SUPPORT_IDENTIFIER_HASH
   value:
-  description: 'The Agentflows identifier hash, to validate the contact in the live chat window.'
+  description: 'The Chatwoot identifier hash, to validate the contact in the live chat window.'
   type: secret
 - name: ACCOUNT_SECURITY_NOTIFICATION_WEBHOOK_URL
   display_title: Webhook URL to post security analysis
   value:
-  description: Used to notify Agentflows about account abuses, potential threads (Should be a Discord Webhook URL)
-# ------- End of Agentflows Internal Config for Self Hosted ----#
+  description: Used to notify Chatwoot about account abuses, potential threads (Should be a Discord Webhook URL)
+# ------- End of Chatwoot Internal Config for Self Hosted ----#
 
 # ------- Compliance Related Config ----#
 - name: CHATWOOT_INSTANCE_ADMIN_EMAIL
