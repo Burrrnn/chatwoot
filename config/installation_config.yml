@@ -237,23 +237,23 @@
 # ------- End of Context.dev Config ------- #
 
 # ------- Agentflows Internal Config for Cloud ----#
-- name: CHATWOOT_INBOX_TOKEN
+- name: AGENTFLOWS_INBOX_TOKEN
   value:
   display_title: 'Inbox Token'
   description: 'The Agentflows Inbox Token for Contact Support in Cloud'
   locked: false
   type: secret
-- name: CHATWOOT_INBOX_HMAC_KEY
+- name: AGENTFLOWS_INBOX_HMAC_KEY
   value:
   display_title: 'Inbox HMAC Key'
   description: 'The Agentflows Inbox HMAC Key for Contact Support in Cloud'
   locked: false
   type: secret
-- name: CHATWOOT_CLOUD_PLANS
+- name: AGENTFLOWS_CLOUD_PLANS
   display_title: 'Cloud Plans'
   value:
   description: 'Config to store stripe plans for cloud'
-- name: CHATWOOT_CLOUD_PLAN_FEATURES
+- name: AGENTFLOWS_CLOUD_PLAN_FEATURES
   display_title: 'Planwise Features List'
   value:
   description: 'Config to features and their associated plans'
@@ -298,14 +298,14 @@
 - name: INSTALLATION_PRICING_PLAN_QUANTITY
   value: 0
   description: 'The number of licenses purchased for the installation, retrieved from the billing API'
-- name: CHATWOOT_SUPPORT_WEBSITE_TOKEN
+- name: AGENTFLOWS_SUPPORT_WEBSITE_TOKEN
   value:
   description: 'The Agentflows website token, used to identify the Agentflows inbox and display the "Contact Support" option on the billing page'
   type: secret
-- name: CHATWOOT_SUPPORT_SCRIPT_URL
+- name: AGENTFLOWS_SUPPORT_SCRIPT_URL
   value:
   description: 'The Agentflows script base URL, to display the "Contact Support" option on the billing page'
-- name: CHATWOOT_SUPPORT_IDENTIFIER_HASH
+- name: AGENTFLOWS_SUPPORT_IDENTIFIER_HASH
   value:
   description: 'The Agentflows identifier hash, to validate the contact in the live chat window.'
   type: secret
@@ -316,7 +316,7 @@
 # ------- End of Agentflows Internal Config for Self Hosted ----#
 
 # ------- Compliance Related Config ----#
-- name: CHATWOOT_INSTANCE_ADMIN_EMAIL
+- name: AGENTFLOWS_INSTANCE_ADMIN_EMAIL
   display_title: 'Instance Admin Email'
   value:
   description: 'The email of the instance administrator to receive compliance-related notifications'
