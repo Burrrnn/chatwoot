@@ -17,7 +17,7 @@ services:
 
       REDIS_URL: redis://redis:6379
 
-      SECRET_KEY_BASE: your_secret_key
+      SECRET_KEY_BASE: 0dfcb7480f2368a33aef3db4851f85cd5f610dea04bf0dcc656127c0d78eaf1ef32d06f15fb5f23abab39367f1bcaaaf0957fcd1ebe9791d5e84387092565756
 
     volumes:
       - storage_data:/app/storage
