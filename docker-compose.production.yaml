@@ -29,7 +29,7 @@ services:
     restart: always
 
   sidekiq:
-    image: burrrnn/agentflows:v1
+    image: burrnboy/agentflows:v1
     depends_on:
       - postgres
       - redis
