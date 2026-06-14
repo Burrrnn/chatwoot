@@ -2,7 +2,7 @@ version: '3'
 
 services:
   rails:
-    image: burrrnn/agentflows:v1
+    image: burrnboy/agentflows:v1
     depends_on:
       - postgres
       - redis
