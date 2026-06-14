@@ -15,3 +15,8 @@ vendor/bundle
 .DS_Store
 *.swp
 *~
+.git
+.github
+README.md
+coverage
+spec
