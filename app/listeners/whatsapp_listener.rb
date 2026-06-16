@@ -21,6 +21,8 @@ class WhatsappListener < BaseListener
     return if incoming_messages.empty?
 
     message.conversation.inbox.channel.read_messages(incoming_messages)
+  rescue StandardError => e
+    Rails.logger.error("WhatsappListener: Failed to mark messages as read: #{e.message}")
   end
 
   private
