@@ -19,6 +19,14 @@ class Whatsapp::Providers::BaseService
     raise 'Overwrite this method in child class'
   end
 
+  def toggle_typing_status(_typing_status, **_kwargs)
+    raise 'Overwrite this method in child class'
+  end
+
+  def read_messages(_messages, **_kwargs)
+    raise 'Overwrite this method in child class'
+  end
+
   def sync_template
     raise 'Overwrite this method in child class'
   end

@@ -79,6 +79,36 @@ class Whatsapp::Providers::WhatsappCloudService < Whatsapp::Providers::BaseServi
     "#{api_base_path}/v13.0/#{media_id}"
   end
 
+  def toggle_typing_status(typing_status, last_message:, **_kwargs)
+    return false unless [Events::Types::CONVERSATION_TYPING_ON].include?(typing_status)
+
+    response = HTTParty.post(
+      "#{phone_id_path('v23.0')}/messages",
+      headers: api_headers,
+      body: {
+        messaging_product: 'whatsapp',
+        message_id: last_message.source_id,
+        status: 'read',
+        typing_indicator: { type: 'text' }
+      }.to_json
+    )
+    response.success?
+  end
+
+  def read_messages(messages, **_kwargs)
+    message = messages.last
+    response = HTTParty.post(
+      "#{phone_id_path('v23.0')}/messages",
+      headers: api_headers,
+      body: {
+        messaging_product: 'whatsapp',
+        message_id: message.source_id,
+        status: 'read'
+      }.to_json
+    )
+    response.success?
+  end
+
   private
 
   def csat_template_service

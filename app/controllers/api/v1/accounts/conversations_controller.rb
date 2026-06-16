@@ -5,6 +5,7 @@ class Api::V1::Accounts::ConversationsController < Api::V1::Accounts::BaseContro
 
   before_action :conversation, except: [:index, :meta, :search, :create, :filter]
   before_action :inbox, :contact, :contact_inbox, only: [:create]
+  after_action :send_whatsapp_read_receipt, only: [:update_last_seen, :show]
 
   ATTACHMENT_RESULTS_PER_PAGE = 100
 
@@ -153,6 +154,15 @@ class Api::V1::Accounts::ConversationsController < Api::V1::Accounts::BaseContro
 
   def attachment_params
     params.permit(:page)
+  end
+
+  def send_whatsapp_read_receipt
+    return unless @conversation.inbox.channel_type == 'Channel::Whatsapp'
+
+    incoming_messages = @conversation.messages.incoming
+    return if incoming_messages.empty?
+
+    @conversation.inbox.channel.read_messages(incoming_messages)
   end
 
   def update_last_seen_on_conversation(last_seen_at, update_assignee)
